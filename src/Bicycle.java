@@ -1,17 +1,7 @@
-public class Bicycle extends Transport {
+public class Bicycle extends TransportWithoutEngine {
 
-    public Bicycle(String modelName, Boolean engine, Boolean trailer) {
-        super(modelName, engine, trailer);
+    public Bicycle(String modelName) {
+        super(modelName);
         setWheelsCount(2);
-    }
-
-    @Override
-    public String getModelName() {
-        return super.getModelName();
-    }
-
-    @Override
-    public int getWheelsCount() {
-        return super.getWheelsCount();
     }
 }

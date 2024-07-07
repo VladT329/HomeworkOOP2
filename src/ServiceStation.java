@@ -2,7 +2,7 @@ import javax.naming.StringRefAddr;
 
 public class ServiceStation{
 
-    public void checkBicycle (Transport bicycle){
+    public void checkBicycle (TransportWithoutEngine bicycle){
         System.out.println("Обслуживаем " + bicycle.getModelName());
         for (int i = 0; i < bicycle.getWheelsCount(); i++) {
             bicycle.updateTyre();

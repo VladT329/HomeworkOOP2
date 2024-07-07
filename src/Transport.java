@@ -2,7 +2,7 @@ public class Transport implements Actions{
 
     private String modelName;
     private int wheelsCount;
-    private Boolean engine;
+    private static Boolean engine;
     private Boolean trailer;
 
     public Transport(String modelName, int wheelsCount) {
@@ -34,12 +34,12 @@ public class Transport implements Actions{
         return modelName;
     }
 
-    @Override
+
     public void updateTyre() {
         System.out.println("Меняем покрышку");
     }
 
-    @Override
+
     public void checkEngine() {
         if (engine == false) {
             System.out.println("На транспорте нет двигателя");
@@ -48,7 +48,7 @@ public class Transport implements Actions{
         }
     }
 
-    @Override
+
     public void checkTrailer() {
         if (trailer == false) {
             System.out.println("На транспорте нет прицепа");

@@ -7,8 +7,8 @@ public class Main {
             Transport truck = new Truck("truck1", 6);
             Transport truck2 = new Truck("truck2", 8);
 
-            Transport bicycle = new Bicycle("bicycle1", false, false);
-            Transport bicycle2 = new Bicycle("bicycle2", false, false);
+            TransportWithoutEngine bicycle = new Bicycle("bicycle1");
+            TransportWithoutEngine bicycle2 = new Bicycle("bicycle2");
 
             ServiceStation station = new ServiceStation();
             station.checkCar(car);
