@@ -1,7 +1,7 @@
 public class Bicycle extends Transport {
 
-    public Bicycle(String modelName) {
-        super(modelName);
+    public Bicycle(String modelName, Boolean engine, Boolean trailer) {
+        super(modelName, engine, trailer);
         setWheelsCount(2);
     }
 

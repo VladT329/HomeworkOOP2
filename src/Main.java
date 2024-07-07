@@ -1,21 +1,21 @@
 public class Main {
         public static void main(String[] args) {
 
-            Transport car = new Car("car1");
-            Transport car2 = new Car("car2");
+            Transport car = new Car("car1", true, false);
+            Transport car2 = new Car("car2", true, false);
 
             Transport truck = new Truck("truck1", 6);
             Transport truck2 = new Truck("truck2", 8);
 
-            Transport bicycle = new Bicycle("bicycle1");
-            Transport bicycle2 = new Bicycle("bicycle2");
+            Transport bicycle = new Bicycle("bicycle1", false, false);
+            Transport bicycle2 = new Bicycle("bicycle2", false, false);
 
             ServiceStation station = new ServiceStation();
-            station.check(car, null, null);
-            station.check(car2, null, null);
-            station.check(null, bicycle, null);
-            station.check(null, bicycle2, null);
-            station.check(null, null, truck);
-            station.check(null, null, truck2);
+            station.checkCar(car);
+            station.checkCar(car2);
+            station.checkBicycle(bicycle);
+            station.checkBicycle(bicycle2);
+            station.checkTruck(truck);
+            station.checkTruck(truck2);
         }
 }

@@ -1,7 +1,7 @@
 public class Car extends Transport{
 
-    public Car(String modelName) {
-        super(modelName);
+    public Car(String modelName, Boolean engine, Boolean trailer) {
+        super(modelName, engine, trailer);
         setWheelsCount(4);
     }
 

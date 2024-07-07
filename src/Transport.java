@@ -2,22 +2,18 @@ public class Transport implements Actions{
 
     private String modelName;
     private int wheelsCount;
+    private Boolean engine;
+    private Boolean trailer;
 
     public Transport(String modelName, int wheelsCount) {
         this.modelName = modelName;
         this.wheelsCount = wheelsCount;
     }
 
-    public Transport(String modelName) {
+    public Transport(String modelName, Boolean engine, Boolean trailer) {
         this.modelName = modelName;
-    }
-
-    public int getWheelsCount() {
-        return wheelsCount;
-    }
-
-    public String getModelName(){
-        return modelName;
+        this.engine = engine;
+        this.trailer = trailer;
     }
 
     public void setModelName(String modelName) {
@@ -29,17 +25,59 @@ public class Transport implements Actions{
     }
 
     @Override
+    public int getWheelsCount() {
+        return wheelsCount;
+    }
+
+    @Override
+    public String getModelName(){
+        return modelName;
+    }
+
+    @Override
     public void updateTyre() {
         System.out.println("Меняем покрышку");
     }
 
     @Override
     public void checkEngine() {
-        System.out.println("Проверяем двигатель");
+        if (engine == false) {
+            System.out.println("На транспорте нет двигателя");
+        } else {
+            System.out.println("Проверяем двигатель");
+        }
     }
 
     @Override
     public void checkTrailer() {
-        System.out.println("Проверяем прицеп");
+        if (trailer == false) {
+            System.out.println("На транспорте нет прицепа");
+        } else {
+            System.out.println("Проверяем прицеп");
+        }
+    }
+
+    public void checkBicycle (Bicycle bicycle){
+        System.out.println("Обслуживаем " + bicycle.getModelName());
+        for (int i = 0; i < bicycle.getWheelsCount(); i++) {
+            bicycle.updateTyre();
+        }
+    }
+
+    public void checkCar (Car car){
+        System.out.println("Обслуживаем " + car.getModelName());
+        for (int i = 0; i < car.getWheelsCount(); i++) {
+            car.updateTyre();
+        }
+        car.checkEngine();
+    }
+
+    public void checkTruck (Truck truck){
+        System.out.println("Обслуживаем " + truck.getModelName());
+        for (int i = 0; i < truck.getWheelsCount(); i++) {
+            truck.updateTyre();
+        }
+        truck.checkEngine();
+        truck.checkTrailer();
     }
 }
