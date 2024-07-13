@@ -1,7 +1,12 @@
-public class Bicycle extends TransportWithoutEngine {
+public class Bicycle extends Transport {
 
     public Bicycle(String modelName) {
-        super(modelName);
-        setWheelsCount(2);
+        super(modelName, 2);
+    }
+
+    @Override
+    public void service() {
+        System.out.println(getModelName());
+        super.updateTyre();
     }
 }

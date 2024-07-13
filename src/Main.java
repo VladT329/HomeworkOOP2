@@ -1,21 +1,17 @@
 public class Main {
-        public static void main(String[] args) {
+    public static void main(String[] args) {
+        Transportable bicycle1 = new Bicycle("bicycle1");
+        Transportable bicycle2 = new Bicycle("bicycle2");
+        Transportable car1 = new Car("car1");
+        Transportable car2 = new Car("car2");
+        Transportable truck1 = new Truck("truck1", 6);
+        Transportable truck2 = new Truck("truck2", 8);
 
-            Transport car = new Car("car1", true, false);
-            Transport car2 = new Car("car2", true, false);
+        Transportable[] transports = {bicycle1, bicycle2, car1, car2, truck1, truck2};
 
-            Transport truck = new Truck("truck1", 6);
-            Transport truck2 = new Truck("truck2", 8);
-
-            TransportWithoutEngine bicycle = new Bicycle("bicycle1");
-            TransportWithoutEngine bicycle2 = new Bicycle("bicycle2");
-
-            ServiceStation station = new ServiceStation();
-            station.checkCar(car);
-            station.checkCar(car2);
-            station.checkBicycle(bicycle);
-            station.checkBicycle(bicycle2);
-            station.checkTruck(truck);
-            station.checkTruck(truck2);
+        ServiceStation station = new ServiceStation();
+        for (Transportable transport : transports) {
+            station.service(transport);
         }
+    }
 }
